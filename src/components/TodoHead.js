@@ -6,7 +6,7 @@ const TodoHeadBlock = styled.div`
   padding-top: 48px;
   padding-left: 32px;
   padding-right: 32px;
-  padding-bottom: 24px;
+  padding-bottom: 20px;
   border-bottom: 1px solid #e9ecef;
   h1 {
     margin: 0;
@@ -19,12 +19,27 @@ const TodoHeadBlock = styled.div`
     font-size: 21px;
   }
   .tasks-left {
-    color: #20c997;
+    color: #FF00FF;
     font-size: 18px;
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-bottom : 10px;
     font-weight: bold;
   }
 `;
+
+  
+
+
+
+
+
+
+const Week = styled.div`
+    font-size : 30px;
+    word-spacing : 180px;
+    text-align : center;
+`
+
 
 function TodoHead() {
   const todos = useTodoState();
@@ -38,10 +53,18 @@ function TodoHead() {
   const dayName = today.toLocaleDateString('ko-KR', { weekday: 'long' });
 
   return (
+    
+    
+      
+
     <TodoHeadBlock>
       <h1>{dateString}</h1>
       <div className="day">{dayName}</div>
       <div className="tasks-left">할 일 {undoneTasks.length}개 남음</div>
+      <Week>
+        <div>월 화 수 목 금 토 일 </div>
+      </Week>
+      
     </TodoHeadBlock>
   );
 }
